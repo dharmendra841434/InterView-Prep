@@ -1,0 +1,55 @@
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+dist/
+.out/
+.next/
+.vite/
+build/
+coverage/
+
+# Cache files
+.cache/
+.eslintcache
+.stylelintcache
+turbo/
+
+# Editor & OS files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Public folder generated files
+/public/static/
+public/build/
+public/**/*.map
+
+# Server files
+server/node_modules/
+server/dist/
+
+# Mobile files
+mobile/DevCracker/node_modules/
+
+# Web files
+web/dev_cracker/node_modules/
+web/dev_cracker/.next/
+web/dev_cracker/dist/
+
+# Do not ignore previews folder inside mobile and web
+!mobile/previews/
+!web/previews/
