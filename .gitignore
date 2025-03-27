@@ -46,9 +46,9 @@ server/dist/
 mobile/DevCracker/node_modules/
 
 # Web files
-web/dev_cracker/node_modules/
-web/dev_cracker/.next/
-web/dev_cracker/dist/
+web/dev_crackers/node_modules/
+web/dev_crackers/.next/
+web/dev_crackers/dist/
 
 # Do not ignore previews folder inside mobile and web
 !mobile/previews/
