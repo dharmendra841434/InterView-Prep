@@ -19,7 +19,8 @@ export default function CustomHeader() {
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center space-x-4 p-3"
+          className="flex items-center space-x-4 p-3 cursor-pointer"
+          onClick={() => navigate.push("/")}
         >
           <img
             src="/logo1.webp"

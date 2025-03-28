@@ -4,7 +4,7 @@ import reactjs from "../../../public/react-js-icon.png";
 import nextjs from "../../../public/next-js.png";
 import modejs from "../../../public/Nodejs.png";
 import mongo from "../../../public/mongo.png";
-import dsa from "../../../public/dsa.png";
+import dsa from "../../../public/react-native.png";
 import Image from "next/image";
 
 const cards = [
@@ -62,8 +62,8 @@ function Card({ title, description, image }: any) {
 
 export default function HorizontalCards() {
   return (
-    <div className=" my-5">
-      <h1 className=" font-semibold text-lg">Trending Technolgy Interviews</h1>
+    <div className=" my-16">
+      <h1 className=" font-bold text-2xl">Trending Technolgy Interviews</h1>
       <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 my-5">
         {cards.map((card) => (
           <Card

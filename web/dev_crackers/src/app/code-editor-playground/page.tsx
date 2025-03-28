@@ -21,12 +21,19 @@ const Playground = () => {
   async function executeCode(code: string) {
     try {
       setLoading(true);
+      const url =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:5000/execute"
+          : "https://interview-prep-backend-pi.vercel.app/execute";
+
       const response = await axios.post(
-        "https://interview-prep-backend-pi.vercel.app/execute",
-        { code },
+        url,
+        {
+          code: code,
+        },
         { headers: { "Content-Type": "application/json" } }
       );
-
+      // console.log("response", response);
       setOutput(response.data?.output);
     } catch (error: any) {
       console.error("Error executing code:", error);
@@ -56,7 +63,11 @@ const Playground = () => {
         output={output}
         loading={loading}
         onChange={(newCode) => setcode(newCode || "")}
-        onRunCode={() => executeCode(code)}
+        onRunCode={() => {
+          if (code) {
+            executeCode(code);
+          }
+        }}
       />
     </div>
   );

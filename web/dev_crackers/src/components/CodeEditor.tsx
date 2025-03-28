@@ -86,7 +86,9 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
           <h3 className="text-white">Your Output</h3>
         </div>
         <div className="w-full h-full bg-black p-3 text-green-500 font-thin">
-          {output.length > 0 ? output[0] : "No output yet"}
+          <pre className={`${output?.includes("Error") && "text-red-500"}`}>
+            {output.length > 0 ? output : "No output yet"}
+          </pre>
         </div>
       </div>
     </div>
