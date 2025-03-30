@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 const corsConfig = {
   origin: [
     "http://localhost:3000",
-    "https://interview-prepration-seven.vercel.app/",
+    "https://interview-prepration-seven.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE"], // Include all HTTP methods you expect to use
   credentials: true, // Allow cookies to be sent/received
