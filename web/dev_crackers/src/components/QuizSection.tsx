@@ -1,41 +1,43 @@
 "use client";
 
+import { technologies } from "@/constant/quizTech";
 import { useState } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const categories = [
-  "Pop Culture",
-  "Science and Technology",
-  "World History",
-  "Geography",
-  "Sports",
+  "Top Technology",
+  "Trending Technology",
+  "Back-End Technology",
+  "Front-End Technology",
+  " Full Stack Technology",
 ];
 
-const quizzes = [
-  {
-    title: "Movies",
-    description: "Test your knowledge of classic and modern films.",
-    image:
-      "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    score: "Score: 4.5",
-  },
-  {
-    title: "TV Shows",
-    description: "How well do you know famous TV series?",
-    image:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    score: "Score: 4.8",
-  },
-  {
-    title: "Music",
-    description: "Can you guess the artist from a single lyric?",
-    image:
-      "https://images.unsplash.com/photo-1605902394069-ff2ae2430e62?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    score: "Score: 4.7",
-  },
-];
+// const quizzes = [
+//   {
+//     title: "Movies",
+//     description: "Test your knowledge of classic and modern films.",
+//     image:
+//       "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     score: "Score: 4.5",
+//   },
+//   {
+//     title: "TV Shows",
+//     description: "How well do you know famous TV series?",
+//     image:
+//       "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     score: "Score: 4.8",
+//   },
+//   {
+//     title: "Music",
+//     description: "Can you guess the artist from a single lyric?",
+//     image:
+//       "https://images.unsplash.com/photo-1605902394069-ff2ae2430e62?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     score: "Score: 4.7",
+//   },
+// ];
 
 export default function QuizSection() {
-  const [activeCategory, setActiveCategory] = useState("Pop Culture");
+  const [activeCategory, setActiveCategory] = useState("Top Technology");
 
   return (
     <div className="container mx-auto p-2 lg:p-6 my-20">
@@ -65,16 +67,17 @@ export default function QuizSection() {
       </div>
       {/* Quiz Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {quizzes.map((quiz, index) => (
+        {technologies.map((quiz, index) => (
           <div
             key={index}
             className="bg-white shadow-lg rounded-lg p-4 flex space-x-4"
           >
-            <img
+            {/* <img
               src={quiz.image}
               alt={quiz.title}
               className="w-24 h-24 rounded-lg object-cover"
-            />
+            /> */}
+            <DotLottieReact src={quiz.image} loop autoplay />
             <div>
               <h3 className="text-lg font-semibold text-gray-700">
                 {quiz.title}

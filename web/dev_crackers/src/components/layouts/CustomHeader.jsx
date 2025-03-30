@@ -58,11 +58,12 @@ export default function CustomHeader() {
                 key={index}
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
+                // whileHover={{ y: -15, opacity: 1 }}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
                 onClick={() => {
                   navigate.push(item?.path?.toLocaleLowerCase());
                 }}
-                className="text-gray-400 hover:text-gray-200 cursor-pointer transition-all py-2 md:py-0"
+                className="text-gray-300 hover:text-gray-200 cursor-pointer transition-all py-2 md:py-0"
               >
                 {item.title}
               </motion.li>

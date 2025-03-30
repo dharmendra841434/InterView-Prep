@@ -6,6 +6,7 @@ import { FaPlay } from "react-icons/fa";
 import axios from "axios";
 import CircleLoader from "@/components/CircleLoader";
 import CodeEditor from "@/components/CodeEditor";
+import { executeCodeRequest } from "@/hooks/ApiRequiests/otherApi";
 
 const Playground = () => {
   const [code, setcode] = useState("");
@@ -21,20 +22,10 @@ const Playground = () => {
   async function executeCode(code: string) {
     try {
       setLoading(true);
-      const url =
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:5000/execute"
-          : "https://interview-prep-backend-pi.vercel.app/execute";
 
-      const response = await axios.post(
-        url,
-        {
-          code: code,
-        },
-        { headers: { "Content-Type": "application/json" } }
-      );
+      const response = await executeCodeRequest({ code: code });
       // console.log("response", response);
-      setOutput(response.data?.output);
+      setOutput(response.output);
     } catch (error: any) {
       console.error("Error executing code:", error);
       return {

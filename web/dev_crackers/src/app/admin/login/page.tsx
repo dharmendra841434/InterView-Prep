@@ -1,4 +1,5 @@
 "use client";
+import useLoginAdmin from "@/hooks/useAdminLogin";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -8,13 +9,14 @@ export default function AdminLogin() {
   const [error, setError] = useState("");
   const router = useRouter();
 
+  const { loginAdmin, isLoading } = useLoginAdmin();
+
   const handleLogin = (e: any) => {
     e.preventDefault();
-    if (username === "dhruvk8221" && password === "password123") {
-      router.push("/admin/dashboard");
-    } else {
-      setError("Invalid credentials. Please try again.");
-    }
+    loginAdmin({
+      adminUsername: username,
+      password: password,
+    });
   };
 
   return (
@@ -23,7 +25,7 @@ export default function AdminLogin() {
         <h2 className="text-2xl font-bold mb-6 text-center text-black">
           Admin Login
         </h2>
-        {error && <p className="text-red-500 text-center">{error}</p>}
+
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label className="block text-gray-700">Username</label>
@@ -47,9 +49,10 @@ export default function AdminLogin() {
           </div>
           <button
             type="submit"
+            disabled={isLoading}
             className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
           >
-            Login
+            {isLoading ? "Loging..." : "Login"}
           </button>
         </form>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LayoutComponent from "../components/layouts/LayoutComponent";
+import { ToastContainer, toast } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Dev Cracker - A New Way to Learn JavaScript",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <LayoutComponent>{children}</LayoutComponent>
+        <ToastContainer />
       </body>
     </html>
   );

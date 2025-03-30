@@ -1,0 +1,13 @@
+/* Custom Scrollbar for `.custom-theme` */
+.custom-ScrollBar::-webkit-scrollbar {
+   width: 4px;
+ }
+ 
+ .custom-ScrollBar::-webkit-scrollbar-thumb {
+   background-color: #271342;
+   border-radius: 3px;
+ }
+ 
+ .custom-ScrollBar::-webkit-scrollbar-track {
+   background-color: #f5f6f8;
+ }

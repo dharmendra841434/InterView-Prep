@@ -4,12 +4,22 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const languages = [
-  "JavaScript",
-  "TypeScript",
-  "MongoDB",
-  "ReactJs",
-  "React-Native",
-  "Node.js",
+  { name: "JavaScript", color: "#F7DF1E", icon: "🟨" },
+  { name: "TypeScript", color: "#3178C6", icon: "🔷" },
+  { name: "MongoDB", color: "#47A248", icon: "🍃" },
+  { name: "ReactJs", color: "#61DAFB", icon: "⚛️" },
+  { name: "Node.js", color: "#339933", icon: "🟩" },
+  { name: "React-Native", color: "#61DAFB", icon: "📱" },
+  { name: "Express.js", color: "#000000", icon: "🚀" },
+  { name: "Python", color: "#3776AB", icon: "🐍" },
+  { name: "Go", color: "#00ADD8", icon: "🔵" },
+  { name: "Swift", color: "#FA7343", icon: "🦅" },
+  { name: "Kotlin", color: "#0095D5", icon: "📦" },
+  { name: "SQL", color: "#F29111", icon: "💾" },
+  { name: "HTML", color: "#E34F26", icon: "📄" },
+  { name: "CSS", color: "#1572B6", icon: "🎨" },
+  { name: "GraphQL", color: "#E10098", icon: "🔮" },
+  { name: "Dockerfile", color: "#1072d8", icon: "🐳" },
 ];
 
 export default function DynamicText() {
@@ -30,14 +40,18 @@ export default function DynamicText() {
           A New Way To Learn{" "}
           <AnimatePresence mode="wait">
             <motion.span
-              key={languages[currentIndex]}
-              className="absolute w-full text-yellow-400 font-bold md:text-[3rem] lg:text-[5rem] ml-3"
+              key={languages[currentIndex].name}
+              className="absolute w-full font-bold md:text-[3rem] lg:text-[5rem] ml-3"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -50, opacity: 0 }}
               transition={{ duration: 0.5 }}
+              style={{
+                color: languages[currentIndex].color,
+              }}
             >
-              {languages[currentIndex]}
+              {languages[currentIndex].name}
+              {languages[currentIndex].icon}
             </motion.span>
           </AnimatePresence>
         </h1>
@@ -48,14 +62,17 @@ export default function DynamicText() {
           <h3 className="  text-5xl   text-gray-200 "> </h3>
           <AnimatePresence mode="wait">
             <motion.span
-              key={languages[currentIndex]}
-              className="absolute w-[90%] text-yellow-400 font-bold text-[2.3rem]  "
+              key={languages[currentIndex].name}
+              className="absolute w-[90%]  font-bold text-[2.3rem]  "
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -50, opacity: 0 }}
               transition={{ duration: 0.5 }}
+              style={{
+                color: languages[currentIndex].color,
+              }}
             >
-              {languages[currentIndex]}
+              {languages[currentIndex].name} {languages[currentIndex].icon}
             </motion.span>
           </AnimatePresence>
         </div>

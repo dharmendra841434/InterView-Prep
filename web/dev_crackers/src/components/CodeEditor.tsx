@@ -82,8 +82,16 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
 
       {/* Output Section */}
       <div className=" w-full md:w-[30%] h-[26rem] md:h-auto">
-        <div className="p-4 bg-[#1e1e1e]">
+        <div className=" flex flex-row items-center justify-between p-4 bg-[#1e1e1e]">
           <h3 className="text-white">Your Output</h3>
+          <div className=" md:hidden">
+            <button
+              onClick={onRunCode}
+              className=" transition-all duration-300 ease-in-out hover:scale-125 bg-green-600 h-fit w-fit rounded-full text-white p-3 z-40  cursor-pointer"
+            >
+              {loading ? <CircleLoader /> : <FaPlay className="text-2xl" />}
+            </button>
+          </div>
         </div>
         <div className="w-full h-full bg-black p-3 text-green-500 font-thin">
           <pre className={`${output?.includes("Error") && "text-red-500"}`}>

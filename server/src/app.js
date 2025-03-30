@@ -1,42 +1,43 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { VM } from "vm2";
+import AdminRouter from "./routes/admin.routes.js";
+import OtherFeaturesRouter from "./routes/other.routes.js";
+import QuizRouter from "./routes/quiz.routes.js";
+import ArticleRouter from "./routes/article.routes.js";
+import DBConnector from "./databases/connection.mongodb.js";
+import bodyParser from "body-parser";
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 dotenv.config();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+
+const corsConfig = {
+  origin: ["http://localhost:3000", "https://chating-room.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"], // Include all HTTP methods you expect to use
+  credentials: true, // Allow cookies to be sent/received
+  allowedHeaders: ["Content-Type", "Authorization"], // Specify headers you allow
+};
+
+app.use(cors(corsConfig));
+
 const PORT = process.env.PORT || 5000;
+
+DBConnector();
 
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.post("/execute", (req, res) => {
-  const { code } = req.body;
-
-  let logs = []; // Store logs here
-
-  const vm = new VM({
-    timeout: 2000, // Prevent infinite loops
-    sandbox: {
-      console: {
-        log: (...args) => logs.push(args.join(" ")), // Capture console.log()
-        error: (...args) => logs.push("ERROR: " + args.join(" ")),
-        warn: (...args) => logs.push("WARNING: " + args.join(" ")),
-      },
-    },
-  });
-
-  try {
-    vm.run(code);
-    res.json({ output: logs.join("\n") }); // Send logs as a formatted string
-  } catch (error) {
-    res.json({ output: "Error: " + error.message });
-  }
-});
+app.use("/api/v1/admin", AdminRouter);
+app.use("/api/v1/other-features", OtherFeaturesRouter);
+app.use("/api/v1/article", ArticleRouter);
+app.use("/api/v1/quiz", QuizRouter);
 
 app.listen(PORT, () => {
   console.log("App is running on PORT", PORT);
