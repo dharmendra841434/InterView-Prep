@@ -70,7 +70,7 @@ export default function QuizSection() {
         {technologies.map((quiz, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg p-4 flex space-x-4"
+            className="bg-gray-900 shadow-lg rounded-lg p-4 flex space-x-4"
           >
             {/* <img
               src={quiz.image}
@@ -79,11 +79,9 @@ export default function QuizSection() {
             /> */}
             <DotLottieReact src={quiz.image} loop autoplay />
             <div>
-              <h3 className="text-lg font-semibold text-gray-700">
-                {quiz.title}
-              </h3>
-              <p className="text-gray-600 text-sm mt-2">{quiz.description}</p>
-              <button className="mt-3 bg-yellow-400 text-white px-4 py-1 rounded-full text-sm">
+              <h3 className="text-lg font-semibold ">{quiz.title}</h3>
+              <p className=" text-sm mt-2">{quiz.description}</p>
+              <button className="mt-3 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm">
                 {quiz.score}
               </button>
             </div>

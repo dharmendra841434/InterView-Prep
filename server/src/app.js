@@ -18,7 +18,10 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 const corsConfig = {
-  origin: ["http://localhost:3000", "https://chating-room.vercel.app"],
+  origin: [
+    "http://localhost:3000",
+    "https://interview-prepration-seven.vercel.app/",
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"], // Include all HTTP methods you expect to use
   credentials: true, // Allow cookies to be sent/received
   allowedHeaders: ["Content-Type", "Authorization"], // Specify headers you allow
