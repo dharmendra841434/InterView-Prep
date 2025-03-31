@@ -40,7 +40,9 @@ export default function CreateArticles() {
     setAskForContent("");
   };
 
-  const { createArticle } = useCreateArticle({ handleReset: handleReset });
+  const { createArticle, createArticleLoading } = useCreateArticle({
+    handleReset: handleReset,
+  });
 
   const handleSubmit = async () => {
     let validationErrors: any = {};
@@ -173,7 +175,7 @@ export default function CreateArticles() {
         onClick={handleSubmit}
         className="mt-4 px-4 py-2 cursor-pointer bg-yellow-500 transition-all duration-300 ease-in-out hover:bg-yellow-600 text-white rounded"
       >
-        Publish Your Article
+        {createArticleLoading ? "Publishing..." : "Publish Your Article"}
       </button>
     </div>
   );

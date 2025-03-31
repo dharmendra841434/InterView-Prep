@@ -48,7 +48,7 @@ const cards = [
 
 function Card({ title, description, image }: any) {
   return (
-    <div className=" w-full shadow-lg rounded-xl bg-white p-2 cursor-pointer">
+    <div className=" w-full shadow-lg rounded-xl bg-gray-200 p-2 cursor-pointer border-2 border-gray-100">
       <Image
         alt="image"
         height={100}

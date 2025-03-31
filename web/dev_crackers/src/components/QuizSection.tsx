@@ -70,7 +70,7 @@ export default function QuizSection() {
         {technologies.map((quiz, index) => (
           <div
             key={index}
-            className="bg-gray-900 shadow-lg rounded-lg p-4 flex space-x-4"
+            className="bg-gray-900 shadow-lg rounded-lg p-4 transition-all duration-300 ease-in-out cursor-pointer hover:scale-105 flex space-x-4 border-2 border-gray-800"
           >
             {/* <img
               src={quiz.image}

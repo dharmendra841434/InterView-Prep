@@ -10,7 +10,7 @@ const languages = [
   { name: "ReactJs", color: "#61DAFB", icon: "⚛️" },
   { name: "Node.js", color: "#339933", icon: "🟩" },
   { name: "React-Native", color: "#61DAFB", icon: "📱" },
-  { name: "Express.js", color: "#000000", icon: "🚀" },
+  { name: "Express.js", color: "#838584", icon: "🚀" },
   { name: "Python", color: "#3776AB", icon: "🐍" },
   { name: "Go", color: "#00ADD8", icon: "🔵" },
   { name: "Swift", color: "#FA7343", icon: "🦅" },
