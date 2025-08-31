@@ -27,28 +27,4 @@ export const articles = [
     body: "Simplifying your space can bring mental clarity and peace.",
     createdAt: "2025-03-25T14:45:00Z",
   },
-  {
-    title: "Breakthroughs in Space Travel",
-    image: "https://source.unsplash.com/random/5",
-    body: "Private space companies are making interstellar travel more accessible.",
-    createdAt: "2025-03-24T18:20:00Z",
-  },
-  {
-    title: "The Rise of Electric Vehicles",
-    image: "https://source.unsplash.com/random/6",
-    body: "EVs are becoming more affordable and efficient every year.",
-    createdAt: "2025-03-23T09:10:00Z",
-  },
-  {
-    title: "Mindfulness and Mental Well-being",
-    image: "https://source.unsplash.com/random/7",
-    body: "Meditation and self-care practices enhance emotional resilience.",
-    createdAt: "2025-03-22T16:05:00Z",
-  },
-  {
-    title: "The Impact of Social Media on Society",
-    image: "https://source.unsplash.com/random/8",
-    body: "Social platforms influence opinions, behavior, and even elections.",
-    createdAt: "2025-03-21T11:30:00Z",
-  },
 ];
