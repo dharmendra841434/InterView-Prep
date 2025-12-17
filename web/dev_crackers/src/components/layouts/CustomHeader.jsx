@@ -30,7 +30,7 @@ export default function CustomHeader() {
           <div>
             <h1 className="text-xl md:text-3xl font-bold">Dev Cracker</h1>
             <p className="text-gray-400 font-light text-xs md:text-base">
-              Crack your dream job with us
+              Platform for Developers
             </p>
           </div>
         </motion.div>
